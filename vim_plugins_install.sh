@@ -8,57 +8,64 @@
 #####################################################################
 
 # Setting Bundle directory in Windows or *nix system
-if [ `uname -s | grep 'MINGW32_NT'` ]; then
-    VIMFILE='~/vimfiles/'
+if [ `uname -s | grep "MINGW32_NT"` ]; then
+    VIMFILE="$HOME/vimfiles"
 else
-    VIMFILE='~/.vim/'
+    VIMFILE="$HOME/.vim"
 fi
 
 # Check VIMFILE directory
 if [ ! -d "$VIMFILE" ]; then
-    mkdir $VIMFILE
-    echo '$VIMFILE directory is OK.'
+    mkdir "$VIMFILE"
+    echo "$VIMFILE directory is OK."
 else
-    echo '$VIMFILE directory is OK.'
-    if [ ! -d "$VIMFILE/autoload/" ]; then
-        cd $VIMFILE
-        mkdir 'autoload'
-        echo 'autoload directory is OK.'
-    else
-        echo 'autoload directory is OK.'
-        if [ ! -d "$VIMFILE/bundle" ]; then
-            cd $VIMFILE
-            mkdir 'bundle'
-            echo 'bundle directory is OK.'
-        else
-            echo 'bundle directory is OK.'
-        fi
-    fi
+    echo "$VIMFILE directory is OK."
+fi
+
+if [ ! -d "$VIMFILE/autoload/" ]; then
+    mkdir "$VIMFILE/autoload"
+    echo "autoload directory is OK."
+else
+    echo "autoload directory is OK."
+fi
+
+if [ ! -d "$VIMFILE/bundle" ]; then
+    mkdir "$VIMFILE/bundle"
+    echo "bundle directory is OK."
+else
+    echo "bundle directory is OK."
 fi
 
 # Generate vimrc
-if [ `uname -s | grep 'MINGW32_NT'` ]; then
-    cp ./_vimrc ~/_vimrc
+if [ `uname -s | grep "MINGW32_NT"` ]; then
+    cp ./_vimrc $HOME/_vimrc
 else
-    cp ./vimrc ~/.vimrc
+    cp ./vimrc $HOME/.vimrc
 fi
 
 # Install molokai colorscheme
-cp -r ./colors $VIMFILE/
+if [ ! -d "$VIMFILE/colors" ]; then
+    mkdir "$VIMFILE/colors"
+    echo "colors directory is OK."
+else
+    echo "colors directory is OK."
+fi
+
+cp ./colors/molokai.vim $VIMFILE/colors
 
 # Check pathogen installation
 if [ ! -f "$VIMFLE/autoload/pathogen.vim" ]; then
-    cd '$VIMFILE/autoload/'
+    cd "$VIMFILE/autoload/"
     wget https://tpo.pe/pathogen.vim
-    echo 'Pathogen installation is OK.'
+    echo "Pathogen installation is OK."
 else
-    echo 'Pathogen installation is OK'
+    echo "Pathogen installation is OK"
 fi
 
 
 
 # Plugins installation
-cd '$VIMFILE/bundle'
+cd "$VIMFILE/bundle"
 git clone https://github.com/yonchu/accelerated-smooth-scroll.git
 git clone https://github.com/jiangmiao/auto-pairs.git
 git clone https://github.com/kien/ctrlp.vim.git
