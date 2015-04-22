@@ -36,6 +36,7 @@ function MyDiff()
 endfunction
 
 "Basic environment settings
+set nocp
 set ru
 set is
 syntax on
