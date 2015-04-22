@@ -79,5 +79,6 @@ git clone https://github.com/bling/vim-airline.git
 git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/nathanaelkane/vim-indent-guides.git
 git clone https://github.com/terryma/vim-multiple-cursors.git
+# You can use this script to install any vim plugins
 
 exit

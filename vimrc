@@ -31,8 +31,9 @@ if has("gui")
     set guifont=Powerline\ Consolas:h12
     set guioptions=m
 else
+    let g:indent_guides_auto_colors=0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=gray
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=blue
 endif
 
 " Vim-airline Settings -------------------------------------------------
