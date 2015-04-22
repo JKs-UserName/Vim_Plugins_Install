@@ -15,7 +15,7 @@ VIM configuration and plugins installation script
 ### Furthermore
 You can modify .vimrc as your favor. Happy vim!!!
 
-## Chinese Version
+## 中文版本
 ### 安装环境
 1. Vim版本需要在7.0及其之上
 2. Vim需要在python或者python3环境下编译
