@@ -10,6 +10,8 @@ VIM configuration and plugins installation script
 
 ### Installation
 <pre><code>git clone https://github.com/snakesgun/Vim_Plugins_Install.git
+chmod 755 vim_plugins_install.sh
+./vim_plugins_install.sh
 </code></pre>
 
 ### Furthermore
@@ -24,6 +26,8 @@ You can modify .vimrc as your favor. Happy vim!!!
 
 ### 安装
 <pre><code>git clone https://github.com/snakesgun/Vim_Plugins_Install.git
+chmod 755 vim_plugins_install.sh
+./vim_plugins_install.sh
 </code></pre>
 
 ### 更多
