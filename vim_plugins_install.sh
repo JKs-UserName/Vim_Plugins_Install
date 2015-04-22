@@ -36,6 +36,16 @@ else
     fi
 fi
 
+# Generate vimrc
+if [ `uname -s | grep 'MINGW32_NT'` ]; then
+    cp ./_vimrc ~/_vimrc
+else
+    cp ./vimrc ~/.vimrc
+fi
+
+# Install molokai colorscheme
+cp -r ./colors $VIMFILE/
+
 # Check pathogen installation
 if [ ! -f "$VIMFLE/autoload/pathogen.vim" ]; then
     cd '$VIMFILE/autoload/'
@@ -62,3 +72,5 @@ git clone https://github.com/bling/vim-airline.git
 git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/nathanaelkane/vim-indent-guides.git
 git clone https://github.com/terryma/vim-multiple-cursors.git
+
+exit
