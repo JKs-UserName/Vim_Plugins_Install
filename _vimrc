@@ -77,7 +77,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#buffer_nr_format = '%s:'
 
 "Tagbar settings
-let g:tagbar_ctags_bin="C:/Users/Luming/vimfiles/ctags.exe"
+"let g:tagbar_ctags_bin="C:/Users/Luming/vimfiles/ctags.exe"
 
 " Highlight Current Columns by vimer.cn
 map ,ch :call SetColorColumn()<CR>
